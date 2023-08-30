@@ -1,7 +1,7 @@
 # Reservana
 <p>Reservana é uma aplicação que tem como objetivo realizar reservas de serviços e agendamentos em estabelecimentos, como salões de beleza, consultórios médicos, petshop, entre outros.</p>
 <p>
-  Esse projeto está sendo desenvolvido com a finalidade de colocar em prática conceitos como:
+  Esse projeto está sendo <strong>desenvolvido</strong> com a finalidade de colocar em prática conceitos como:
   <ul>
     <li>Clean Code</li>
     <li>Clean Architecture</li>
