@@ -14,7 +14,7 @@
   </ul>
 </p>
 
-<h2>Stack Utilizada</h2>
+<h2>Tecnologias utilizadas</h2>
 <ul>
   <li>.NET 7</li>
   <li>SQL Server</li>
@@ -22,4 +22,6 @@
   <li>RabbitMQ</li>
   <li>MediatR</li>
   <li>Ocelot</li>
+  <li>Docker</li>
+  <li>Docer-compose</li>
 </ul>
