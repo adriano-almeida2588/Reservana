@@ -23,9 +23,9 @@ namespace Booking.API.Commands
         {
             var schedule = new Schedule(request.StartTime, request.Duration);
 
-            var booking = new Domain.AggregatesModel.BookingAggregate.Booking(request.CustomerId, request.ServiceId)
-                                .AddSchedule(schedule.StartTime, schedule.Duration)
-                                .AddBookingStatus(3, BookingStatus.Pending.Name);
+            var booking = new Domain.AggregatesModel.BookingAggregate.Booking(request.CustomerId, request.ServiceId, request?.Comment)
+                                                                     .AddSchedule(schedule.StartTime, schedule.Duration)
+                                                                     .AddBookingStatus(3, BookingStatus.Pending.Name);
 
             _logger.LogInformation("Criando Reserva - Booking: {@Booking}", booking);
 

@@ -6,10 +6,11 @@ namespace Booking.Domain.AggregatesModel.BookingAggregate
     {
         private Booking() { }
 
-        public Booking(Guid customerId, Guid serviceId)
+        public Booking(Guid customerId, Guid serviceId, string? comment)
         {
             _customerId = customerId;
             _serviceId = serviceId;
+            Comment = comment;
         }
 
         private Guid _customerId;
