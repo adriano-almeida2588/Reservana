@@ -19,6 +19,8 @@
   <li>.NET 7</li>
   <li>SQL Server</li>
   <li>Entity Framework Core 7x</li>
+  <li>Dapper</li>
+  <li>FluentValidation</li>
   <li>RabbitMQ</li>
   <li>MediatR</li>
   <li>Ocelot</li>
