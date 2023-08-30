@@ -21,10 +21,8 @@ namespace Booking.API.Commands
 
         public async Task<bool> Handle(CreateBookingCommand request, CancellationToken cancellationToken)
         {
-            var schedule = new Schedule(request.StartTime, request.Duration);
-
             var booking = new Domain.AggregatesModel.BookingAggregate.Booking(request.CustomerId, request.ServiceId, request?.Comment)
-                                                                     .AddSchedule(schedule.StartTime, schedule.Duration)
+                                                                     .AddSchedule(request.StartTime, request.Duration)
                                                                      .AddBookingStatus(3, BookingStatus.Pending.Name);
 
             _logger.LogInformation("Criando Reserva - Booking: {@Booking}", booking);
