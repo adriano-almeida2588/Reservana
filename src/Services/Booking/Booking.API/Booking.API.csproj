@@ -10,6 +10,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.7.1" />
+    <PackageReference Include="MediatR" Version="12.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.10" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.4" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
@@ -17,6 +19,14 @@
 
   <ItemGroup>
     <Folder Include="Controllers\" />
+    <Folder Include="DomainEventHandlers\" />
+    <Folder Include="Queries\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\Services.Common\Services.Common.csproj" />
+    <ProjectReference Include="..\Booking.Domain\Booking.Domain.csproj" />
+    <ProjectReference Include="..\Booking.Infrastructure\Booking.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

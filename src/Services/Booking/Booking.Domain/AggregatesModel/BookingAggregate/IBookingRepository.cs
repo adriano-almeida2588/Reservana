@@ -1,10 +1,11 @@
-﻿namespace Booking.Domain.AggregatesModel.BookingAggregate
+﻿using Booking.Domain.SeedWork;
+
+namespace Booking.Domain.AggregatesModel.BookingAggregate
 {
-    public interface IBookingRepository
+    public interface IBookingRepository : IRepository<Booking>
     {
-        Task AddAsync(Booking booking);
-        Task UpdateAsync(Booking booking);
-        Task DeleteAsync(Booking booking);
+        Booking Add(Booking booking);
+        Booking Update(Booking booking);
         Task<Booking> GetByIdAsync(Guid id);
         Task<List<Booking>> GetBookings();
     }

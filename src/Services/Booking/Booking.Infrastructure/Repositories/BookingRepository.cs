@@ -14,16 +14,9 @@ namespace Booking.Infrastructure.Repositories
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
-        public async Task AddAsync(Domain.AggregatesModel.BookingAggregate.Booking booking)
+        public Domain.AggregatesModel.BookingAggregate.Booking Add(Domain.AggregatesModel.BookingAggregate.Booking booking)
         {
-            await _context.Bookings.AddAsync(booking);
-        }
-
-        public Task DeleteAsync(Domain.AggregatesModel.BookingAggregate.Booking booking)
-        {
-            _context.Bookings.Remove(booking);
-
-            return Task.CompletedTask;
+            return _context.Bookings.Add(booking).Entity;
         }
 
         public async Task<List<Domain.AggregatesModel.BookingAggregate.Booking>> GetBookings()
@@ -40,11 +33,9 @@ namespace Booking.Infrastructure.Repositories
             return booking;
         }
 
-        public Task UpdateAsync(Domain.AggregatesModel.BookingAggregate.Booking booking)
+        public Domain.AggregatesModel.BookingAggregate.Booking Update(Domain.AggregatesModel.BookingAggregate.Booking booking)
         {
-            _context.Bookings.Update(booking);
-
-            return Task.CompletedTask;
+            return _context.Bookings.Update(booking).Entity;
         }
     }
 }

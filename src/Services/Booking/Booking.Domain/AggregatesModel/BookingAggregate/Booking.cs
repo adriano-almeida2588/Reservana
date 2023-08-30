@@ -6,13 +6,10 @@ namespace Booking.Domain.AggregatesModel.BookingAggregate
     {
         private Booking() { }
 
-        public Booking(Guid customerId, Guid serviceId, 
-            Schedule schedule, BookingStatus bookingStatus)
+        public Booking(Guid customerId, Guid serviceId)
         {
             _customerId = customerId;
             _serviceId = serviceId;
-            Schedule = schedule;
-            BookingStatus = bookingStatus;
         }
 
         private Guid _customerId;
@@ -22,5 +19,23 @@ namespace Booking.Domain.AggregatesModel.BookingAggregate
         public Schedule Schedule { get; private set; }
         public BookingStatus BookingStatus { get; private set; }
         public string Comment { get; private set; }
+
+        public Booking AddSchedule(DateTime startTime, TimeSpan duration)
+        {
+            var schedule = new Schedule(startTime, duration);
+
+            Schedule = schedule;
+
+            return this;
+        }
+
+        public Booking AddBookingStatus(int id, string name)
+        {
+            var bookingStatus = new BookingStatus(id, name);
+
+            BookingStatus = bookingStatus;
+
+            return this;
+        }
     }
 }
